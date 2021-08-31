@@ -1,0 +1,78 @@
+//armstrong number
+
+
+ import java.util.Scanner;
+public class Armstrong
+{
+  public static void main(String args[])
+  {
+    Scanner sc = new Scanner (System.in);
+
+    int a = sc.nextInt ();
+    int b = a;
+    int n, sum = 0;
+    while (a > 0)
+      {
+	n = a % 10;
+	sum = sum + (n * n * n);
+	a = a / 10;
+      }
+
+    if (sum == b)
+      System.out.println (" yes..!");
+    else
+      System.out.println (" No..!");
+  }
+}
+
+<.......................................................................................>
+  //Thired highest element in array
+  
+public class High
+{
+  public static void main(String args[])
+  {
+     int arr[]={23,45,2,31,67,34,9};
+      
+     
+     for (int i = 0; i < arr.length; i++)   
+       {  
+              for (int j = i + 1; j < arr.length; j++)   
+            {  
+                   int tmp = 0;  
+                   if (arr[i] > arr[j])   
+                    {  
+                     tmp = arr[i];  
+                     arr[i] = arr[j];  
+                        arr[j] = tmp;  
+                     }  
+                }  
+          }
+      
+        
+     System.out.println(" thired Height element :" + arr[2]);
+  }
+}
+
+<.........................................................................................>
+  
+
+// reverse a no
+ import java.util.Scanner;
+public class Reverse
+{
+  public static void main(String args[])
+  {
+    Scanner sc = new Scanner (System.in);
+
+    int a = sc.nextInt ();
+    int n, sum = 0;
+    while (a > 0)
+      {
+	n = a % 10;
+	sum = sum * 10 + n;
+	a = a / 10;
+      }
+      System.out.println (" Reverse No is :" + sum);
+  }
+}
