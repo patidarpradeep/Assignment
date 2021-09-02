@@ -1,0 +1,66 @@
+//Create an array with five scores out of 100, compute the average of the scores and compute percentage.
+
+
+public class Score
+{
+  public static void main(String args[])
+  {
+    int  arr[]={75,65,87,94,76};
+     float total=arr.length*100;
+     float sum=0;
+      
+	 for(int i=0;i<arr.length;i++)
+{
+        sum=sum+arr[i];
+}	 
+float avrage= sum/arr.length;
+float percent= (sum*100)/total;
+System.out.println("avrage :" +avrage);
+System.out.println("Percentage :"+percent);
+
+      
+  }
+   
+  }
+  
+  <...................................................................................................................>
+  
+ /* Create an array of type int with 10 elements.
+ 
+ * int array[]={8,2,3,1,6,5,7};
+
+* Sort the array in descending order. */
+
+public class SortArray{
+    public static void main(String args[])
+    {
+        int array[]={8,2,3,1,6,5,7,4,9,0};
+        
+        System.out.println("Before sort Array ...........!");
+         for(int element: array)
+         {
+             System.out.print(element + " ");
+         }
+         System.out.println();
+         System.out.println("After sort the Array in decending order...........!");
+         for(int i=0;i<array.length;i++){
+             for(int j=i+1;j<array.length;j++){
+                 if(array[i]<array[j])
+                 {
+                     int swap=array[i];
+                     array[i]=array[j];
+                     array[j]=swap;
+                 }
+             }
+         }
+         
+          for(int element: array)
+         {
+             System.out.print(element + " ");
+         }
+    }
+    
+}
+<.................................................................................................................................>
+  
+  
