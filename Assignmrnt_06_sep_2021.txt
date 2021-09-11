@@ -1,0 +1,227 @@
+//Check if given string starts with A and Endwith t.
+
+
+package SixsepAssignment;
+import java.util.Scanner;
+public class StartendWithsomeChar {
+	public static void main(String args[]) {
+	Scanner sc=new Scanner(System.in);
+	
+	System.out.println("Enter The String: ");
+	String str1=sc.nextLine();
+	
+	
+	for(int i=0;i<str1.length();i++)
+	{
+		if((str1.charAt(0)== 'a' || str1.charAt(0)== 'A') 
+			&& (str1.charAt(str1.length()-1)== 't' || str1.charAt(str1.length()-1)== 'T'))
+           {
+	          System.out.print(str1.charAt(i));
+           }
+	}
+      
+}
+}
+
+<.....................................................................................................................>
+
+/* 1.  Replace a character a with e in following string without using inbuilt method.
+
+Halo
+
+Replace character at 3rd index pos in upper case. */
+
+package SixsepAssignment;
+
+public class ReplaceCharacter {
+
+	public static void main(String[] args) {
+		 String str1="Hallo";
+		   str1.toLowerCase();
+		   char ch[]=str1.toCharArray();
+		   System.out.println(str1);
+		       //  int  c=0;
+		 for(int i=0;i<str1.length();i++)
+		 {
+			  
+			 if(ch[i]=='a')
+			 {
+				 ch[i] = 'e';
+			 }
+			 
+			  if(i== 2)
+		     {
+		    	 
+				 char c=Character.toUpperCase(ch[i]);
+				 ch[i]= c;
+			
+				 /* c=(int) ch[i];
+				     c=c-32;
+			         ch[i]=(char)c;
+			      */
+				 
+				   
+			 }
+			
+		 }
+		 System.out.print(ch);
+	}
+
+}
+<....................................................................................................................................>
+
+/*  Write a code to mask a given string.
+
+  for e.g 
+
+    SABBIR POONAWALA
+    SAXXXX POXXXXXXX  */
+
+
+package SixsepAssignment;
+
+import java.util.Scanner;
+  
+public class MaskCode {
+	 public static void mask(String s) {
+	     String str2=s.toUpperCase();
+		char ch[]=str2.toCharArray();
+          
+	  for(int i=2;i<ch.length;i++) {
+		  
+          if(ch[i] ==' ' && ch[i+1]!=' ')
+		  {
+        	  i=i+2;  
+        	  continue; 
+		  }
+          
+          ch[i]='X';
+  		 
+	  }
+	  for(int i=0;i<ch.length;i++)
+	  {  
+		System.out.print(ch[i]);   
+	  }
+	 }
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		 System.out.println("enter the String :");
+	      String  str1 = sc.nextLine();
+		  mask(str1);
+		
+		 
+		
+	}
+
+}
+
+<......................................................................................................................................>
+
+/*  4. Create a class Student with following attributes
+   
+   Student
+ =============
+   rollNo int
+   studentFirstName String
+   studentLastName  String
+   studentAge int
+ 
+ Override toString(),equals(),hashCode() without using tool.*/
+
+package SixsepAssignment;
+
+public class StudentData {
+
+	private int rollNo;
+	private String FirstName;
+	private String LastName;
+	private int studentAge;
+	
+	public StudentData(int rollNo,String FirstName, String LastName, int studentAge)
+	{
+		this.rollNo=rollNo;
+		this.FirstName=FirstName;
+		this.LastName=LastName;
+		this.studentAge=studentAge;
+		
+	}
+	public String toString()
+	{
+		return "Student Roll No is: " + rollNo + "  Student Name is : " + FirstName+ " "+ LastName+ "  Student Age IS :  "+ studentAge;
+		
+	}	
+}
+
+<........................................................................>
+   //     toString()
+
+
+       package SixsepAssignment;
+
+public class ToStringMethod  extends StudentData{
+	
+	
+
+	public ToStringMethod(int rollNo, String FirstName, String LastName, int studentAge) {
+		super(rollNo, FirstName, LastName, studentAge);
+		
+	}
+
+	public static void main(String[] args) {
+		
+         ToStringMethod ts=new ToStringMethod(01,"pradee","patidar",22);
+	   System.out.println(ts);
+	
+	}
+     
+	
+}
+<................................>
+//  equals(),hashCode()
+
+package SixsepAssignment;
+
+public class EqualsMethod {
+
+	public static void main(String[] args) {
+		String str1= "pradeep";
+		String str2=" Patidar";
+		String str3="p";
+		String s=new String("pradeep");
+		Character c= new Character('p');
+		System.out.println(str1.equals(str2));
+		System.out.println(str2.equals(str3));
+		System.out.println(str3.equals(str1));
+		System.out.println(str3.equals(c));
+		System.out.println(str3.equals(c.toString()));
+
+	}
+
+}
+<........................................>
+
+// hashCode()
+
+package SixsepAssignment;
+
+public class Hashcodemethod {
+	 public static void main(String args[])
+	 {
+		 String s=new String("pradeep");
+		 String s1="2";
+		 Integer n=Integer.parseInt(s1);
+		 Integer n1=new Integer(1878);
+		
+		  System.out.println(s.hashCode());
+		  
+		  System.out.println(s1.hashCode());
+		  
+		  System.out.println(n.hashCode());
+		  
+		  System.out.println(n1.hashCode());
+	 }
+
+}
+
+
