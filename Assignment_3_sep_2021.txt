@@ -1,0 +1,76 @@
+Identify Entities and sub entities ,their attributes and methods in Student Management System. 
+
+
+ 
+<..............................................................>
+student Entity
+..................
+// Attributes//
+...............
+ int     Student_id;
+ String  Student_name; 
+ String  student_email;
+ int     student_no;
+ String  student_passsword;
+<.........................................>
+
+
+  login Entity
+.......................
+  // Attributes//
+...............
+ string  Loginid_email;
+ string  login_Password;
+<..........................................>
+
+
+ Stdentprofile  entity
+..................
+// Attributes//
+...............
+ String profile_name;
+ String profile_detail;
+ int profile_id;
+<..................................>
+
+
+Fees Entity
+..................
+// Attributes//
+...............
+
+  int      fees_id;
+  String   Student_name;
+  String   Student_id;
+  String   cource_name;
+  int      fees_amount;
+  int      totalfees_amount;
+  String   feesStstuts;
+
+<.............................>
+
+course Entity
+..................
+// Attributes//
+...............
+
+int     course_id;
+String  course_name;
+string  student_id;
+string  Student_name;
+String  course_type;
+Strng   course_registration
+
+<....................................>
+
+Exam Entity
+..................
+// Attributes//
+...............
+int       exam_id;
+String    Exam_name;
+int       Student_id;
+String    Student_name;
+int       student_rollno;
+String    exam_date;
+
