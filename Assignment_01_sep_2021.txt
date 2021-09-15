@@ -1,0 +1,77 @@
+
+/* 1. In a String find and replace a word.
+
+  e.g Java is Object Oriented. Java is Programming Language.
+
+ Search for a word "Java"
+ Replace "Java" with "C++";
+
+ C++ is Object Oriented. C++ is Programming Language.package onesepAssignment; */
+
+package onesepAssignment;
+
+public class Replace {
+	public static void main(String args[])
+	
+		    {
+		        String str="Java is Object oriented. Java is platform independent. Java is simple.";
+		          str.toLowerCase();
+		         String str1[]=str.split(" ");
+		        
+		         String str2="Java";
+		          
+		          for(int i=0;i<str1.length;i++)
+		          {  
+		            
+		              if(str2.equals(str1[i]))
+		              {
+		                str1[i]= "c++";
+		              }
+		               
+		        
+		          }
+		           
+
+		          for(int i=0;i<str1.length;i++)
+		          {
+		        	  System.out.print(str1[i] + " ");
+		          }
+		    }
+		    
+		}
+		
+	
+
+<.....................................................................................>
+/*  In a given String count number of words, count numbers of number.
+
+  "12,RutherFord Building,Lake Street,Chichago-29" */
+
+package onesepAssignment;
+
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.FileNotFoundException;
+import java.io.StreamTokenizer;
+
+public class CountWordNumber  {
+
+	public static void main(String[] args) throws IOException {
+		 int countnumber = 0;
+		 int countword=0;
+         StreamTokenizer st= new  StreamTokenizer(new FileReader("D:\\Java Traning\\Assignment\\File.txt"));
+         while(st.nextToken()!=StreamTokenizer.TT_EOF)
+         {
+        	 if(st.nextToken()!=StreamTokenizer.TT_WORD)
+        	 {
+        		 countword++;
+        	 }
+        	 else if(st.ttype==StreamTokenizer.TT_NUMBER)
+        	 {
+        		 countnumber++;
+        	 }
+         }
+         System.out.println("numbers :"+ countnumber);
+         System.out.println("words :"+ countword);
+	}
+}
