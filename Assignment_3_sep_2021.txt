@@ -12,6 +12,16 @@ student Entity
  String  student_email;
  int     student_no;
  String  student_passsword;
+
+...................................................
+//methods//
+......................................................
+    getStudent_Id                   setStudent_Id
+    getStudent_Name		    setStudent_Name
+    getStudent_Email		    setStudent_Email
+    getStudent_No		    setStudent_No
+    getStudent_Password	            setStudent_Password
+
 <.........................................>
 
 
@@ -21,6 +31,14 @@ student Entity
 ...............
  string  Loginid_email;
  string  login_Password;
+
+...................................................
+//methods//
+......................................................
+
+       getLoginid_Email                     setLoginid_Email 
+       getLogin_Password                    setLogin_Password
+
 <..........................................>
 
 
@@ -31,7 +49,18 @@ student Entity
  String profile_name;
  String profile_detail;
  int profile_id;
+
+...................................................
+//methods//
+......................................................
+
+ getProfile_Name			 setProfile_Name
+ getProfile_Detail			 setProfile_Detail
+ getProfile_Id				 setProfile_Id
+
 <..................................>
+
+
 
 
 Fees Entity
@@ -46,6 +75,20 @@ Fees Entity
   int      fees_amount;
   int      totalfees_amount;
   String   feesStstuts;
+...................................................
+//methods//
+......................................................
+  
+  getFees_id				setFees_id
+  getStudent_Name			setStudent_Name
+  getStudent_Id				setStudent_Id
+  getCourse_name			setCourse_name
+  getFees_amount                        setFees_amount
+  getTotalfees_amount			setTotalfees_amount;
+  getFeesStatus				setFeesStatus
+
+
+
 
 <.............................>
 
@@ -61,6 +104,17 @@ string  Student_name;
 String  course_type;
 Strng   course_registration
 
+...................................................
+//methods//
+......................................................
+
+  getCourse_id				setCourse_id
+  getCourse_name			setCourse_name
+  getStudent_id				setStudent_id
+  getStudent_Name 			setStudent_Name
+  getCourse_type			setCourse_type
+  getCourse_registration		setCourse_registration
+
 <....................................>
 
 Exam Entity
@@ -73,4 +127,20 @@ int       Student_id;
 String    Student_name;
 int       student_rollno;
 String    exam_date;
+
+
+...................................................
+//methods//
+......................................................
+
+    getExam_id 			setExam_id
+    getExam_name		setExam_name
+    getstudent_Id 		setStudent_Id
+    getStudent_Name		setStudent_Name
+    getstudent_rollno		setStudent_rollno
+    getExam_date		getExam_date
+
+
+<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><>>>>>>>>>>>>>>>>>>>>>
+
 
