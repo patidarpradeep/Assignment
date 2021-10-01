@@ -1,0 +1,231 @@
+
+
+//1. Using TDD find fourth largest element of 
+//an array given size greater than 5
+
+package TwantitwosepAssignment;
+
+public class FourthLargestElement {
+
+	public int findElement(int[] array) {
+		
+        int size=array.length;
+        int temp=0;
+		 for(int i=0;i<size;i++)
+		 {
+			for(int j=i+1;j<size;j++)
+			{
+				if(array[i]>array[j])
+				{
+					temp=array[i];
+					array[i]=array[j];
+					array[j]=temp;
+				}
+			}
+		 }
+		return  array[size-4];
+	}
+}
+
+....................
+
+package TwantitwosepAssignment;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class LargestElement {
+     
+	FourthLargestElement element=null;
+	@Before
+	public void setUp() throws Exception {
+		  element=new FourthLargestElement();
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		 element=null;
+	}
+
+	@Test
+	public void test() {
+		int Array[]= {12,3,45,67,23,4};
+		 int expected=12;
+		 int actual=element.findElement(Array);
+		 assertEquals(expected, actual);
+	}
+	
+	@Test
+	  public void test1() {
+		int Array[]= {};
+		try {
+			element.findElement(Array);
+			 assertTrue(true);
+		}catch(Exception e)
+		{
+			 assertFalse(false);
+			
+		}
+		
+	}
+}
+
+
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+//2. Using TDD count the number of duplicates elements in an array of type String of size 10
+
+package TwantitwosepAssignment;
+
+public class RemoveDuplicateString {
+
+	public int duplicateString(String[] array) {
+		int Count=0;
+		for(int i=0;i<10-1;i++)
+		{
+			for(int j=i+1;j<10;j++)
+			{
+				if((array[i].equals(array[j])) && i!=j)
+				{
+					 Count++;
+				}
+			}
+			
+		}
+		return Count;
+	}
+
+}
+.............................
+
+package TwantitwosepAssignment;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class RemoveDuplicateStringTest {
+        
+	RemoveDuplicateString remove=null;
+	@Before
+	public void setUp() throws Exception {
+		remove=new RemoveDuplicateString();	
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		remove=null;
+	}
+
+	@Test
+	public void test() {
+		String Array[]= {"aa","bb","cc","dd","aa","bbb","cccc","dd","cccc","sd"};
+		int expected=3;
+		int actual=remove.duplicateString(Array);
+		assertEquals(expected, actual);
+	}
+  
+	 @Test
+	  public void test1() {
+		 String Array[]= {};
+		 try {
+			 remove.duplicateString(Array);
+			 assertTrue(false);
+		 }catch(Exception e)
+		 {
+			 assertTrue(true);
+		 }
+	 }
+}
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+//3. Using TDD approach Count the number of prime numbers in given array
+
+package TwantitwosepAssignment;
+
+public class Prime {
+
+	public int checkNo(int[] array) {
+		int size=array.length;
+		int primeno=0;
+		int count=0;
+		 for(int i=0;i<size;i++)
+		 {
+			 primeno=check(array[i]);
+			 if(primeno==1)
+			 {
+				 count++;
+			 }
+		 }
+	return count;
+	}
+
+	private int check(int i) {
+		if(i<=0)
+			return 0;
+		for(int j=2;j<i/2;j++)
+		{
+			if(i%j==0)
+			{
+				return 0;
+			}
+		}
+		return 1;
+	}
+}
+
+package TwantitwosepAssignment;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class PrimeTest {
+       private Prime prime=null;
+     
+	@Before
+	public void setUp() throws Exception {
+		 prime=new Prime();
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		prime =null;
+	}
+
+	@Test
+	public void test() {
+	        int Array[]= {12,11,34,21,33,41,71};
+	        int expected= 3;
+	        int actual=prime.checkNo(Array);
+	        assertEquals(expected, actual);
+	        
+	}
+	
+	@Test
+	 public void ttest() {
+		int Array[]= {};
+		try {
+			prime.checkNo(Array);
+		     assertFalse(false);
+			}catch(RuntimeException e) {
+				assertTrue(true);
+			}		
+		}
+	}
+
+	
+	
+
+
+..........................................><<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>
+
