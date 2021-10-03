@@ -1,0 +1,203 @@
+/*
+ * 1. Create an menu drive console-based application 
+ * to register,view,update and delete student details.
+ * Use static arrays for storage of student objects.
+ */
+
+package SepNineStudentProject;
+
+public class StudentDetail {
+	int student_id;
+	String student_name;
+	String student_course;
+	int student_age;
+	public StudentDetail() {
+		super();
+	}
+	public StudentDetail(int student_id, String student_name, String student_course, int student_age) {
+		super();
+		this.student_id = student_id;
+		this.student_name = student_name;
+		this.student_course = student_course;
+		this.student_age = student_age;
+	}
+	
+	public int getStudent_id() {
+		return student_id;
+	}
+	public void setStudent_id(int student_id) {
+		this.student_id = student_id;
+	}
+	public void setStudent_name(String student_name) {
+		this.student_name = student_name;
+	}
+	public void setStudent_course(String student_course) {
+		this.student_course = student_course;
+	}
+	public void setStudent_age(int student_age) {
+		this.student_age = student_age;
+	}
+	public String getStudent_name() {
+		return student_name;
+	}
+	public String getStudent_course() {
+		return student_course;
+	}
+	public int getStudent_age() {
+		return student_age;
+	}
+
+	
+}
+
+
+
+........
+package SepNineStudentProject;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class StudentProfile {
+	static Scanner sc = new Scanner(System.in);
+	public static ArrayList<StudentDetail > list=new ArrayList<StudentDetail>();
+	  
+	  
+	  static public void menu() {
+		     System.out.println("---------------Student Detail--------------"+"\n");
+		    int key;
+		    System.out.println("Enter  1  for  Add Student Detail"+"\n");
+		    System.out.println("Enter  2  for  View Student Detail"+"\n");
+		    System.out.println("Enter  3  for  Update Student Detail"+"\n");
+		    System.out.println("Enter  4  for  Delete Student Detail"+"\n");
+		    System.out.println("0. Exit");
+		    key = sc.nextInt();
+
+		    switch (key){
+		        case 1:
+		               addDetail();
+		               System.out.println("Student Detail Register Successfully....."+"\n");
+		               menu();
+		               break;
+		        case 2:
+		        	   System.out.println("....Student Detail Are...."+"\n");
+		               viewDetail();
+		               menu();
+		               break;
+		        case 3:
+		        	   updateDetail();
+		        	   System.out.println("Student Detail Updated successfully..."+"\n");
+		        	   menu();
+		               break;
+		        case 4:
+		        	deleteDetail();
+		        	System.out.println("Student Detail Delete Successfully...."+"\n");
+		            menu();
+		            break;
+		        case 0:
+		            break;
+		       
+		    }
+}
+
+
+
+//  Method for register Student Detail
+	private static void addDetail() {
+		StudentDetail stud=new StudentDetail();
+		int n;
+		do{
+		System.out.println("Enter the Student Id:");
+		stud.setStudent_id(sc.nextInt());
+		
+		System.out.println("Enter the Student Name:");
+		stud.setStudent_name(sc.nextLine());
+		sc.nextLine();
+		
+		System.out.println("Enter the Student Course:");
+		stud.setStudent_course(sc.nextLine());
+		//sc.nextLine();
+		
+		System.out.println("Enter the Student Age:");
+		stud.setStudent_age(sc.nextInt());
+		
+		list.add(stud);
+		
+		System.out.println("If you want to add More Student Detail Please enter 1:");
+		n=sc.nextInt();
+		}while(n==1);
+		
+	}
+
+// method for view Student Detail
+	private static void viewDetail() {
+		
+		
+		for(int i=0;i<list.size();i++)
+		{     
+			StudentDetail stud=list.get(i);
+			System.out.println("Student Id         :"+ stud.getStudent_id());
+			System.out.println("Student Name       :"+ stud.getStudent_name());
+			System.out.println("Student Course     :"+ stud.getStudent_course());
+			System.out.println("Student Age        :"+ stud.getStudent_age());
+		}
+		
+	}
+
+  // method for update Student Detail
+	
+	private static void updateDetail() {
+   
+		  System.out.println("Enter student Id which detail you want to update");
+		  int update=sc.nextInt();
+		  
+		  for(int i=0;i<list.size();i++)
+		  {
+			  StudentDetail stud=list.get(i);
+			  if(stud.getStudent_id()==update) {
+				  
+				  sc.nextLine();
+				  System.out.println("Enter student new name:");
+				  stud.setStudent_name(sc.nextLine());
+				
+				  
+				  System.out.println("Enter Student new course:");
+				  stud.setStudent_course(sc.nextLine());
+				  
+				  System.out.println("Enter student new age:");
+				  stud.setStudent_age(sc.nextInt());
+				  
+			  }
+		  }
+		
+
+	}
+  // method for Delete Student Detail
+	private static void deleteDetail() {
+		
+		System.out.println("Enter student Id which student you want to remove");
+		int del=sc.nextInt();
+		
+		for(int i=0;i<list.size();i++)
+		{
+			StudentDetail stud=list.get(i);
+			if(stud.getStudent_id()==del)
+			{
+				list.remove(stud);
+				break;
+			}
+		}
+		
+	}
+	
+
+
+
+	public static void main(String args[]) {
+		
+		   
+		   menu();
+	   }
+
+	
+}
